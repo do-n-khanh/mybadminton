@@ -8,18 +8,53 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+import Firebase
+import FirebaseAuthUI
 
+import FirebaseDatabaseUI
+import FirebaseGoogleAuthUI
+import FirebaseFacebookAuthUI
+import FBSDKCoreKit
+import FBSDKLoginKit
+class ViewController: UIViewController  {
+    
+    //var db = FIRDatabaseReference.init()
+    var kFacebookAppID = "a4271be0ddfbe5d7fef9cee04ab3b387"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        
+        
     }
-
+   
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
