@@ -14,15 +14,25 @@ import FirebaseAuthUI
 import FirebaseDatabaseUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
+import FirebaseTwitterAuthUI
 import FBSDKCoreKit
 import FBSDKLoginKit
 
 
 class ViewController: UIViewController, FUIAuthDelegate  {
     
+    @IBOutlet weak var userInfoLabel: UILabel!
+    
+    @IBOutlet weak var logOutButton: UIButton!
+    
+    @IBAction func logOutButton(_ sender: UIButton) {
+       try! Auth.auth().signOut()
+        
+    }
+    
+    let kFirebaseTermsOfService = URL(string: "https://firebase.google.com/terms/")!
     
     
-    // You need to adopt a FUIAuthDelegate protocol to receive callback
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +40,35 @@ class ViewController: UIViewController, FUIAuthDelegate  {
         
         
     }
-   
+    
     override func viewDidAppear(_ animated: Bool) {
-        login()
+        checkLoggedIn()
     }
+    func checkLoggedIn() {
+        
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                self.userInfoLabel.text = user!.displayName!
+                self.logOutButton.isHidden = false
+            } else {
+                // No user is signed in.
+                self.login()
+            }
+        }
+    }
+    
+    
     
     func login(){
         let providers: [FUIAuthProvider] = [
             FUIGoogleAuth(),
-            FUIFacebookAuth()
-            //FUITwitterAuth(),
+            FUIFacebookAuth(),
+            FUITwitterAuth(),
             //FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()),
         ]
         let authUI = FUIAuth.defaultAuthUI()
+        authUI?.tosurl = kFirebaseTermsOfService
         authUI?.providers = providers
         authUI?.delegate = self
         let authViewController = authUI!.authViewController()

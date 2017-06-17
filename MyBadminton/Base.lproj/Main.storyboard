@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,9 +21,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbK-rF-YoB">
+                                <rect key="frame" x="16" y="77" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uIN-00-u5o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-Mz-jdH">
+                                <rect key="frame" x="127" y="174" width="121" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="SVX-kY-hWs"/>
+                                    <constraint firstAttribute="width" constant="121" id="TuA-LK-HwU"/>
+                                </constraints>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MmV-LS-KHa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lbK-rF-YoB" secondAttribute="trailing" id="39y-pG-aG1"/>
+                            <constraint firstItem="lbK-rF-YoB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3lJ-0u-pHq"/>
+                            <constraint firstItem="cXw-Mz-jdH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AkM-oU-hez"/>
+                            <constraint firstItem="cXw-Mz-jdH" firstAttribute="top" secondItem="lbK-rF-YoB" secondAttribute="bottom" constant="37" id="UME-g2-vuy"/>
+                            <constraint firstItem="lbK-rF-YoB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="57" id="qrz-za-aO3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logOutButton" destination="cXw-Mz-jdH" id="Xek-fO-hDZ"/>
+                        <outlet property="userInfoLabel" destination="lbK-rF-YoB" id="zvW-bn-I71"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -39,6 +39,12 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>twitterkit-fWvOQiL5Q6QhEepBILPyVh7ws</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
 				<string>com.googleusercontent.apps.494640057215-irrk4fpgksp811suho79suqn1d6njovi</string>
 			</array>
 		</dict>
@@ -60,5 +66,24 @@
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
 	</array>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>FABRIC_API_KEY</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>fWvOQiL5Q6QhEepBILPyVh7ws</string>
+					<key>consumerSecret</key>
+					<string>anuPqknHWzOcv7iiZqqQ2gqeCP27d4nenAnmdUEY1VJtZ3JBBg</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 </dict>
 </plist>
