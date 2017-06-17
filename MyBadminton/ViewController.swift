@@ -16,11 +16,13 @@ import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 import FBSDKCoreKit
 import FBSDKLoginKit
-class ViewController: UIViewController  {
+
+
+class ViewController: UIViewController, FUIAuthDelegate  {
     
-    //var db = FIRDatabaseReference.init()
-    var kFacebookAppID = "a4271be0ddfbe5d7fef9cee04ab3b387"
     
+    
+    // You need to adopt a FUIAuthDelegate protocol to receive callback
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,35 @@ class ViewController: UIViewController  {
         
     }
    
+    override func viewDidAppear(_ animated: Bool) {
+        login()
+    }
     
+    func login(){
+        let providers: [FUIAuthProvider] = [
+            FUIGoogleAuth(),
+            FUIFacebookAuth()
+            //FUITwitterAuth(),
+            //FUIPhoneAuth(authUI:FUIAuth.defaultAuthUI()),
+        ]
+        let authUI = FUIAuth.defaultAuthUI()
+        authUI?.providers = providers
+        authUI?.delegate = self
+        let authViewController = authUI!.authViewController()
+        self.present(authViewController, animated: true, completion: nil)
+
+        
+    }
+    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?){
+    
+        if error != nil {
+            //Problem signing in
+            login()
+        }else {
+            //User is in! Here is where we code after signing in
+            
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
