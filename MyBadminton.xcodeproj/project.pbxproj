@@ -13,8 +13,9 @@
 		1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1816FB241EEBDFED00B2119F /* MyBadminton.xcdatamodeld */; };
 		1816FB281EEBDFED00B2119F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1816FB271EEBDFED00B2119F /* Assets.xcassets */; };
 		1816FB2B1EEBDFED00B2119F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1816FB291EEBDFED00B2119F /* LaunchScreen.storyboard */; };
+		18926C4C1EF6CB7000B70473 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18926C4B1EF6CB7000B70473 /* UITextViewPlaceholder.swift */; };
 		18B364CE1EF0044C001EBB2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B364CD1EF0044C001EBB2B /* GoogleService-Info.plist */; };
-		18D118541EF5A874003A829C /* CreateClubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D118531EF5A874003A829C /* CreateClubVC.swift */; };
+		18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D118531EF5A874003A829C /* CreateClubTVC.swift */; };
 		A5A181879B52DF966A7B2319 /* Pods_MyBadminton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +28,9 @@
 		1816FB271EEBDFED00B2119F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1816FB2A1EEBDFED00B2119F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1816FB2C1EEBDFED00B2119F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18926C4B1EF6CB7000B70473 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
 		18B364CD1EF0044C001EBB2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		18D118531EF5A874003A829C /* CreateClubVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClubVC.swift; sourceTree = "<group>"; };
+		18D118531EF5A874003A829C /* CreateClubTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClubTVC.swift; sourceTree = "<group>"; };
 		2129ECC31D27E9137D80687C /* Pods-MyBadminton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.release.xcconfig"; sourceTree = "<group>"; };
 		CD2298D4B3BED2C36F79E36D /* Pods-MyBadminton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.debug.xcconfig"; sourceTree = "<group>"; };
 		F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBadminton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 		18B364D01EF00758001EBB2B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18926C4B1EF6CB7000B70473 /* UITextViewPlaceholder.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -107,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				1816FB1F1EEBDFED00B2119F /* ViewController.swift */,
-				18D118531EF5A874003A829C /* CreateClubVC.swift */,
+				18D118531EF5A874003A829C /* CreateClubTVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -255,8 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1816FB201EEBDFED00B2119F /* ViewController.swift in Sources */,
+				18926C4C1EF6CB7000B70473 /* UITextViewPlaceholder.swift in Sources */,
 				1816FB1E1EEBDFED00B2119F /* AppDelegate.swift in Sources */,
-				18D118541EF5A874003A829C /* CreateClubVC.swift in Sources */,
+				18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */,
 				1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

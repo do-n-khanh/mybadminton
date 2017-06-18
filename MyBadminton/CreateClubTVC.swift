@@ -8,15 +8,18 @@
 
 import UIKit
 
-class CreateClubVC: UIViewController {
+class CreateClubTVC: UITableViewController {
 
+    @IBOutlet weak var clubExplanationTV: UITextView!
+    
     @IBAction func cancelCreateAction(_ sender: Any) {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        clubExplanationTV.placeholder = "クラブの紹介（任意1,000文字以内）\n紹介するために紹介するために紹介するために紹介するために紹介するために）\n\n例）ために紹介するために"
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
