@@ -12,16 +12,35 @@ class CreateClubTVC: UITableViewController {
 
     @IBOutlet weak var clubExplanationTV: UITextView!
     
-    @IBAction func cancelCreateAction(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func cancelCreateAction(_ sender: Any) {
+//        presentingViewController?.dismiss(animated: true, completion: nil)
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         clubExplanationTV.placeholder = "クラブの紹介（任意1,000文字以内）\n紹介するために紹介するために紹介するために紹介するために紹介するために）\n\n例）ために紹介するために"
         // Do any additional setup after loading the view.
         
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+//        cameraV.isUserInteractionEnabled = true
+//        cameraV.addGestureRecognizer(tapGestureRecognizer)
+//        
+        
+        
     }
+    
+//    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+//    {
+//        let tappedImage = tapGestureRecognizer.view as! UIImageView
+//        print("image is tapped")
+//        // Your action
+//    }
 
+    @IBOutlet weak var cameraV: UIView!
+    
+    
+    @IBOutlet weak var cameraIV: UIImageView!
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

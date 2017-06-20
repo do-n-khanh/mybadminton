@@ -16,6 +16,7 @@
 		18926C4C1EF6CB7000B70473 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18926C4B1EF6CB7000B70473 /* UITextViewPlaceholder.swift */; };
 		18B364CE1EF0044C001EBB2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B364CD1EF0044C001EBB2B /* GoogleService-Info.plist */; };
 		18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D118531EF5A874003A829C /* CreateClubTVC.swift */; };
+		18EA4F461EF7C8280030EF0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EA4F451EF7C8280030EF0E /* MapKit.framework */; };
 		A5A181879B52DF966A7B2319 /* Pods_MyBadminton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		18926C4B1EF6CB7000B70473 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
 		18B364CD1EF0044C001EBB2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18D118531EF5A874003A829C /* CreateClubTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClubTVC.swift; sourceTree = "<group>"; };
+		18EA4F451EF7C8280030EF0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2129ECC31D27E9137D80687C /* Pods-MyBadminton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.release.xcconfig"; sourceTree = "<group>"; };
 		CD2298D4B3BED2C36F79E36D /* Pods-MyBadminton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.debug.xcconfig"; sourceTree = "<group>"; };
 		F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBadminton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EA4F461EF7C8280030EF0E /* MapKit.framework in Frameworks */,
 				A5A181879B52DF966A7B2319 /* Pods_MyBadminton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +130,7 @@
 		DAAA8D72F3E0E3B764349E0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18EA4F451EF7C8280030EF0E /* MapKit.framework */,
 				F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */,
 			);
 			name = Frameworks;
@@ -169,6 +173,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = T6X23BY56A;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

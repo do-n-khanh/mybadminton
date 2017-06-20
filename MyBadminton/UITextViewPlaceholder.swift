@@ -67,11 +67,11 @@ extension UITextView: UITextViewDelegate {
     /// Resize the placeholder UILabel to make sure it's in the same position as the UITextView text
     private func resizePlaceholder() {
         if let placeholderLabel = self.viewWithTag(100) as! UILabel? {
-            let labelX = self.textContainer.lineFragmentPadding
+            let labelX = self.textContainerInset.left
             let labelY = self.textContainerInset.top - 2
             let labelWidth = self.frame.width - (labelX * 2)
             //let labelHeight = placeholderLabel.frame.height
-            let labelHeight = self.frame.height - 32
+            let labelHeight = self.frame.height - 44
             placeholderLabel.frame = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
             placeholderLabel.numberOfLines = 0
         }

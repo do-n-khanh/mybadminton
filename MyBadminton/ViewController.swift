@@ -91,7 +91,9 @@ class ViewController: UIViewController, FUIAuthDelegate  {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue){
+        
+    }
    
 }
 
