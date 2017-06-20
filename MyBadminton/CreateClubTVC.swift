@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateClubTVC: UITableViewController {
+class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var clubExplanationTV: UITextView!
     
@@ -20,33 +20,75 @@ class CreateClubTVC: UITableViewController {
         clubExplanationTV.placeholder = "クラブの紹介（任意1,000文字以内）\n紹介するために紹介するために紹介するために紹介するために紹介するために）\n\n例）ために紹介するために"
         // Do any additional setup after loading the view.
         
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-//        cameraV.isUserInteractionEnabled = true
-//        cameraV.addGestureRecognizer(tapGestureRecognizer)
-//        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(cameraTapped(tapGestureRecognizer:)))
+        cameraUIView.isUserInteractionEnabled = true
+        cameraUIView.addGestureRecognizer(tapGestureRecognizer)
+        
         
         
     }
     
-//    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-//    {
-//        let tappedImage = tapGestureRecognizer.view as! UIImageView
-//        print("image is tapped")
-//        // Your action
-//    }
-
-    @IBOutlet weak var cameraV: UIView!
-    
-    
-    @IBOutlet weak var cameraIV: UIImageView!
-    
+    func cameraTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "写真を撮る", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePicker.sourceType = .camera
+                imagePicker.allowsEditing = true
+                
+                self.present(imagePicker,animated: true,completion: nil)
+            }
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "アルバムから選択する", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker,animated: true,completion: nil)
+            }
+            
+        }))
+        
+        
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+        
+        // Your action
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            cameraUIImageView.image = selectedImage
+            cameraUIImageView.contentMode = .scaleAspectFill
+            cameraUIImageView.clipsToBounds = true
+            
+            let leadingConstrain = NSLayoutConstraint(item: cameraUIImageView, attribute: .leading, relatedBy: .equal, toItem: cameraUIImageView.superview, attribute: .leading, multiplier: 1, constant: 0)
+            leadingConstrain.isActive = true
+            
+            let trailingConstrain = NSLayoutConstraint(item: cameraUIImageView, attribute: .trailing, relatedBy: .equal, toItem: cameraUIImageView.superview, attribute: .trailing, multiplier: 1, constant: 0)
+            trailingConstrain.isActive = true
+            
+            let topConstrain = NSLayoutConstraint(item: cameraUIImageView, attribute: .top, relatedBy: .equal, toItem: cameraUIImageView.superview, attribute: .top, multiplier: 1, constant: 0)
+            topConstrain.isActive = true
+            
+            let bottomConstrain = NSLayoutConstraint(item: cameraUIImageView, attribute: .bottom, relatedBy: .equal, toItem: cameraUIImageView.superview, attribute: .bottom, multiplier: 1, constant: 0)
+            bottomConstrain.isActive = true
+            
+            
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBOutlet weak var cameraUIView: UIView!
+    @IBOutlet weak var cameraUIImageView: UIImageView!
     /*
     // MARK: - Navigation
 

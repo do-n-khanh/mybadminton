@@ -279,6 +279,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cameraUIImageView" destination="9zQ-h7-WXu" id="xTL-Z7-12l"/>
+                        <outlet property="cameraUIView" destination="U3G-zA-iyj" id="60p-rQ-5sa"/>
                         <outlet property="clubExplanationTV" destination="xXE-i6-0zl" id="rIz-Gc-IbH"/>
                     </connections>
                 </tableViewController>
