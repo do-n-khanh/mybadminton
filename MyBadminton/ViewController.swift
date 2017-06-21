@@ -29,6 +29,10 @@ class ViewController: UIViewController, FUIAuthDelegate  {
        try! Auth.auth().signOut()
         
     }
+    var ref: DatabaseReference!
+    
+    
+    
     
     let kFirebaseTermsOfService = URL(string: "https://firebase.google.com/terms/")!
     
@@ -36,7 +40,7 @@ class ViewController: UIViewController, FUIAuthDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        ref = Database.database().reference()
         
         
     }
@@ -80,9 +84,18 @@ class ViewController: UIViewController, FUIAuthDelegate  {
     
         if error != nil {
             //Problem signing in
+            print("If there is error, call login")
             login()
         }else {
             //User is in! Here is where we code after signing in
+            //create new user in realtime database
+            let userRef = ref.child("users")
+            let uid = user?.uid
+            let uemail = user!.email
+            
+            let newUserRef = userRef.child(uid!)
+            newUserRef.setValue(["displayName":user!])
+            print("Users is in and newUserRef is \(newUserRef)")
             
         }
     }
