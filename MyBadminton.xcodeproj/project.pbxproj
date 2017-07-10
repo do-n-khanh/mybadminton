@@ -17,6 +17,9 @@
 		18B364CE1EF0044C001EBB2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B364CD1EF0044C001EBB2B /* GoogleService-Info.plist */; };
 		18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D118531EF5A874003A829C /* CreateClubTVC.swift */; };
 		18EA4F461EF7C8280030EF0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EA4F451EF7C8280030EF0E /* MapKit.framework */; };
+		75547A541F11EF82008955D0 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A531F11EF82008955D0 /* MyPage.storyboard */; };
+		75547A571F11F372008955D0 /* CreateClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A551F11F372008955D0 /* CreateClub.storyboard */; };
+		75FABDEC1F11B03000C22FB9 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FABDEA1F11B03000C22FB9 /* Discovery.storyboard */; };
 		A5A181879B52DF966A7B2319 /* Pods_MyBadminton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +37,9 @@
 		18D118531EF5A874003A829C /* CreateClubTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClubTVC.swift; sourceTree = "<group>"; };
 		18EA4F451EF7C8280030EF0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2129ECC31D27E9137D80687C /* Pods-MyBadminton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.release.xcconfig"; sourceTree = "<group>"; };
+		75547A531F11EF82008955D0 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		75547A561F11F372008955D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateClub.storyboard; sourceTree = "<group>"; };
+		75FABDEB1F11B03000C22FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
 		CD2298D4B3BED2C36F79E36D /* Pods-MyBadminton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.debug.xcconfig"; sourceTree = "<group>"; };
 		F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBadminton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,7 +82,7 @@
 				18B364D01EF00758001EBB2B /* View */,
 				18B364CF1EF0074C001EBB2B /* Model */,
 				18B364CC1EF003FD001EBB2B /* Supporting Files */,
-				1816FB211EEBDFED00B2119F /* Main.storyboard */,
+				75DAAEFF1F1075C600744E14 /* StoryBoard */,
 				1816FB241EEBDFED00B2119F /* MyBadminton.xcdatamodeld */,
 			);
 			path = MyBadminton;
@@ -116,6 +122,17 @@
 				18D118531EF5A874003A829C /* CreateClubTVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		75DAAEFF1F1075C600744E14 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				1816FB211EEBDFED00B2119F /* Main.storyboard */,
+				75547A551F11F372008955D0 /* CreateClub.storyboard */,
+				75547A531F11EF82008955D0 /* MyPage.storyboard */,
+				75FABDEA1F11B03000C22FB9 /* Discovery.storyboard */,
+			);
+			name = StoryBoard;
 			sourceTree = "<group>";
 		};
 		76C51FDAE4C386CB4C286B9F /* Pods */ = {
@@ -204,6 +221,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75FABDEC1F11B03000C22FB9 /* Discovery.storyboard in Resources */,
+				75547A541F11EF82008955D0 /* MyPage.storyboard in Resources */,
+				75547A571F11F372008955D0 /* CreateClub.storyboard in Resources */,
 				1816FB2B1EEBDFED00B2119F /* LaunchScreen.storyboard in Resources */,
 				18B364CE1EF0044C001EBB2B /* GoogleService-Info.plist in Resources */,
 				1816FB281EEBDFED00B2119F /* Assets.xcassets in Resources */,
@@ -291,6 +311,22 @@
 				1816FB2A1EEBDFED00B2119F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		75547A551F11F372008955D0 /* CreateClub.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75547A561F11F372008955D0 /* Base */,
+			);
+			name = CreateClub.storyboard;
+			sourceTree = "<group>";
+		};
+		75FABDEA1F11B03000C22FB9 /* Discovery.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75FABDEB1F11B03000C22FB9 /* Base */,
+			);
+			name = Discovery.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

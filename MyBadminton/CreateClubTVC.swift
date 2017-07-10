@@ -9,7 +9,10 @@
 import UIKit
 
 class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    @IBOutlet weak var cameraUIView: UIView!
+    @IBOutlet weak var cameraUIImageView: UIImageView!
+    @IBOutlet weak var clubNameTextField: UITextField!
+    @IBOutlet weak var createClubBtnOutlet: UIButton!
     @IBOutlet weak var clubExplanationTV: UITextView!
     
 //    @IBAction func cancelCreateAction(_ sender: Any) {
@@ -28,6 +31,20 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         
     }
     
+    func handleTextField() {
+        clubNameTextField.addTarget(self, action: #selector(CreateClubTVC.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    func textFieldDidChange(){
+        guard let clubName = clubNameTextField.text, !clubName.isEmpty else {
+            //If does not satisfied condition
+            createClubBtnOutlet.setTitleColor(UIColor.red, for: UIControlState.normal)
+            createClubBtnOutlet.isEnabled = false
+            return 
+        }
+        createClubBtnOutlet.setTitleColor(UIColor.green, for: UIControlState.normal)
+        createClubBtnOutlet.isEnabled = true
+    }
     func cameraTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let imagePicker = UIImagePickerController()
@@ -87,8 +104,7 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var cameraUIView: UIView!
-    @IBOutlet weak var cameraUIImageView: UIImageView!
+    
     /*
     // MARK: - Navigation
 
