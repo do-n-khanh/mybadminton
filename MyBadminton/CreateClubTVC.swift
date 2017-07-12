@@ -27,7 +27,7 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         cameraUIView.isUserInteractionEnabled = true
         cameraUIView.addGestureRecognizer(tapGestureRecognizer)
         
-        
+        handleTextField()
         
     }
     
@@ -36,6 +36,7 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func textFieldDidChange(){
+        
         guard let clubName = clubNameTextField.text, !clubName.isEmpty else {
             //If does not satisfied condition
             createClubBtnOutlet.setTitleColor(UIColor.red, for: UIControlState.normal)
