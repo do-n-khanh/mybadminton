@@ -17,6 +17,8 @@
 		18B364CE1EF0044C001EBB2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B364CD1EF0044C001EBB2B /* GoogleService-Info.plist */; };
 		18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D118531EF5A874003A829C /* CreateClubTVC.swift */; };
 		18EA4F461EF7C8280030EF0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EA4F451EF7C8280030EF0E /* MapKit.framework */; };
+		75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */; };
+		75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D9B1F1DE95000FBF56D /* AddAddress.swift */; };
 		75547A541F11EF82008955D0 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A531F11EF82008955D0 /* MyPage.storyboard */; };
 		75547A571F11F372008955D0 /* CreateClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A551F11F372008955D0 /* CreateClub.storyboard */; };
 		75FABDEC1F11B03000C22FB9 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FABDEA1F11B03000C22FB9 /* Discovery.storyboard */; };
@@ -37,6 +39,8 @@
 		18D118531EF5A874003A829C /* CreateClubTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClubTVC.swift; sourceTree = "<group>"; };
 		18EA4F451EF7C8280030EF0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2129ECC31D27E9137D80687C /* Pods-MyBadminton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.release.xcconfig"; sourceTree = "<group>"; };
+		75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberOfCourtTVC.swift; sourceTree = "<group>"; };
+		75004D9B1F1DE95000FBF56D /* AddAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddress.swift; sourceTree = "<group>"; };
 		75547A531F11EF82008955D0 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		75547A561F11F372008955D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateClub.storyboard; sourceTree = "<group>"; };
 		75FABDEB1F11B03000C22FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			children = (
 				1816FB1F1EEBDFED00B2119F /* ViewController.swift */,
 				18D118531EF5A874003A829C /* CreateClubTVC.swift */,
+				75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */,
+				75004D9B1F1DE95000FBF56D /* AddAddress.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -287,10 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1816FB201EEBDFED00B2119F /* ViewController.swift in Sources */,
+				75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */,
 				18926C4C1EF6CB7000B70473 /* UITextViewPlaceholder.swift in Sources */,
 				1816FB1E1EEBDFED00B2119F /* AppDelegate.swift in Sources */,
 				18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */,
 				1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */,
+				75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

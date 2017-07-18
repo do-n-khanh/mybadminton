@@ -15,6 +15,11 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var createClubBtnOutlet: UIButton!
     @IBOutlet weak var clubExplanationTV: UITextView!
     
+    @IBOutlet weak var courtDetailLabel: UILabel!
+    @IBAction func numberOfCourtCellClicked (segue: UIStoryboardSegue) {
+            
+        
+    }
 //    @IBAction func cancelCreateAction(_ sender: Any) {
 //        presentingViewController?.dismiss(animated: true, completion: nil)
 //    }
@@ -28,6 +33,7 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         cameraUIView.addGestureRecognizer(tapGestureRecognizer)
         
         handleTextField()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
     }
     
@@ -105,6 +111,14 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNumberOfCourView" {
+            let destinationController = segue.destination as! NumberOfCourtTVC
+            destinationController.currentNumberOfCourt = courtDetailLabel.text
+            
+            
+        }
+    }
     
     /*
     // MARK: - Navigation
@@ -115,5 +129,7 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
