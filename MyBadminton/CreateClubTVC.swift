@@ -16,13 +16,14 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var clubExplanationTV: UITextView!
     
     @IBOutlet weak var courtDetailLabel: UILabel!
-    @IBAction func numberOfCourtCellClicked (segue: UIStoryboardSegue) {
-            
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    @IBAction func tapToBackToCreateClubTVC (segue: UIStoryboardSegue) {
+    
         
     }
-//    @IBAction func cancelCreateAction(_ sender: Any) {
-//        presentingViewController?.dismiss(animated: true, completion: nil)
-//    }
+    var clubAddress : ClubAddress!
     override func viewDidLoad() {
         super.viewDidLoad()
         clubExplanationTV.placeholder = "クラブの紹介（任意1,000文字以内）\n紹介するために紹介するために紹介するために紹介するために紹介するために）\n\n例）ために紹介するために"
@@ -35,6 +36,16 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         handleTextField()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
+            
+        //clubAddress = ClubAddress(postCode: "", cityName: "へろ", ward: "", address1: "", address2: "")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let _clubAddress = clubAddress {
+            addressLabel.text = _clubAddress.cityName
+            
+        }
     }
     
     func handleTextField() {
@@ -112,23 +123,20 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toNumberOfCourView" {
+        if segue.identifier == "showNumberOfCourtView" {
             let destinationController = segue.destination as! NumberOfCourtTVC
             destinationController.currentNumberOfCourt = courtDetailLabel.text
             
             
         }
+        if segue.identifier == "showAddAddress" {
+            let destinationController = segue.destination as! AddAddress
+            destinationController.clubAddress = clubAddress
+            
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
     
     
 
