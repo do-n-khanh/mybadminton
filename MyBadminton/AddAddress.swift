@@ -39,6 +39,11 @@ class AddAddress: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.title = "住所"
         tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let _clubAddress = clubAddress {
             postCodeTextField.text = _clubAddress.postCode
             cityNameLabel.text = _clubAddress.cityName
@@ -47,13 +52,13 @@ class AddAddress: UITableViewController {
             address2TextField.text = _clubAddress.address2
             cityNameLabel.textColor = UIColor.black
         }
-        
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCityName" {
             let destinationController = segue.destination as! CityNameTVC
-            destinationController.selectedCityName = cityNameLabel.text!
+            
+            clubAddress = ClubAddress(postCode: postCodeTextField.text!, cityName: cityNameLabel.text!, ward: wardTextField.text!, address1: address1TextField.text!, address2: address2TextField.text!)
+            destinationController.clubAddress = clubAddress
         }
         
         if segue.identifier == "backToCreateClubTVCFromAddAddress" {

@@ -23,6 +23,8 @@
 		75547A541F11EF82008955D0 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A531F11EF82008955D0 /* MyPage.storyboard */; };
 		75547A571F11F372008955D0 /* CreateClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A551F11F372008955D0 /* CreateClub.storyboard */; };
 		75F206AC1F1F2DFF002FF0C3 /* ClubAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */; };
+		75F206B01F202DFB002FF0C3 /* ClubLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F206AF1F202DFB002FF0C3 /* ClubLevelVC.swift */; };
+		75F206B21F204C51002FF0C3 /* ClubLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F206B11F204C51002FF0C3 /* ClubLevel.swift */; };
 		75FABDEC1F11B03000C22FB9 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FABDEA1F11B03000C22FB9 /* Discovery.storyboard */; };
 		A5A181879B52DF966A7B2319 /* Pods_MyBadminton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,8 @@
 		75547A531F11EF82008955D0 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		75547A561F11F372008955D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateClub.storyboard; sourceTree = "<group>"; };
 		75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubAddress.swift; sourceTree = "<group>"; };
+		75F206AF1F202DFB002FF0C3 /* ClubLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubLevelVC.swift; sourceTree = "<group>"; };
+		75F206B11F204C51002FF0C3 /* ClubLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubLevel.swift; sourceTree = "<group>"; };
 		75FABDEB1F11B03000C22FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
 		CD2298D4B3BED2C36F79E36D /* Pods-MyBadminton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.debug.xcconfig"; sourceTree = "<group>"; };
 		F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBadminton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */,
+				75F206B11F204C51002FF0C3 /* ClubLevel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */,
 				75004D9B1F1DE95000FBF56D /* AddAddress.swift */,
 				75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */,
+				75F206AF1F202DFB002FF0C3 /* ClubLevelVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -301,8 +307,10 @@
 				1816FB201EEBDFED00B2119F /* ViewController.swift in Sources */,
 				75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */,
 				75F206AC1F1F2DFF002FF0C3 /* ClubAddress.swift in Sources */,
+				75F206B01F202DFB002FF0C3 /* ClubLevelVC.swift in Sources */,
 				18926C4C1EF6CB7000B70473 /* UITextViewPlaceholder.swift in Sources */,
 				75004D9E1F1DF35300FBF56D /* CityNameTVC.swift in Sources */,
+				75F206B21F204C51002FF0C3 /* ClubLevel.swift in Sources */,
 				1816FB1E1EEBDFED00B2119F /* AppDelegate.swift in Sources */,
 				18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */,
 				1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */,

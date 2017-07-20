@@ -202,8 +202,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1面" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O6k-RJ-FSu">
-                                                    <rect key="frame" x="354" y="11.999999999999998" width="25" height="20.333333333333332"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="設定してください" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O6k-RJ-FSu">
+                                                    <rect key="frame" x="240.33333333333337" y="11.999999999999998" width="138.66666666666666" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -265,6 +265,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cZG-nI-Tyq" kind="show" identifier="showClubLevel" id="oPO-eE-3QY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="HNz-wD-I1m">
                                         <rect key="frame" x="0.0" y="488" width="414" height="44"/>
@@ -272,24 +275,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HNz-wD-I1m" id="8YC-ZG-BOA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0d-03-ak1">
-                                                    <rect key="frame" x="40" y="1" width="334" height="40"/>
-                                                    <color key="backgroundColor" red="0.83163467639999999" green="0.1338136181" blue="0.099371815200000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="Oah-uL-HaQ"/>
-                                                    </constraints>
-                                                    <state key="normal" title="登録する">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="I0d-03-ak1" secondAttribute="trailing" constant="40" id="Bh8-hA-dAe"/>
-                                                <constraint firstItem="I0d-03-ak1" firstAttribute="centerX" secondItem="8YC-ZG-BOA" secondAttribute="centerX" id="RXN-Bk-LtK"/>
-                                                <constraint firstItem="I0d-03-ak1" firstAttribute="leading" secondItem="8YC-ZG-BOA" secondAttribute="leading" constant="40" id="b9q-qb-2b0"/>
-                                                <constraint firstItem="I0d-03-ak1" firstAttribute="centerY" secondItem="8YC-ZG-BOA" secondAttribute="centerY" id="q0y-K0-WJg"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="0P9-ru-cUq">
@@ -338,6 +323,7 @@
                         <outlet property="cameraUIImageView" destination="9zQ-h7-WXu" id="xTL-Z7-12l"/>
                         <outlet property="cameraUIView" destination="U3G-zA-iyj" id="60p-rQ-5sa"/>
                         <outlet property="clubExplanationTV" destination="xXE-i6-0zl" id="rIz-Gc-IbH"/>
+                        <outlet property="clubLevelLabel" destination="FhE-XL-DLO" id="cU6-eh-WuD"/>
                         <outlet property="clubNameTextField" destination="aFb-Pm-I9r" id="pSR-ki-Pkn"/>
                         <outlet property="courtDetailLabel" destination="O6k-RJ-FSu" id="bNd-za-jKJ"/>
                     </connections>
@@ -380,7 +366,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="2TS-bY-fda" kind="unwind" identifier="backToCreateClubView" unwindAction="tapToBackToCreateClubTVCWithSegue:" id="OBR-JX-XJk"/>
+                                    <segue destination="2TS-bY-fda" kind="unwind" identifier="backToCreateClubViewFromNumberOfCourtTVC" unwindAction="tapToBackToCreateClubTVCWithSegue:" id="OBR-JX-XJk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -630,6 +616,81 @@
                 <exit id="GCe-8U-iYe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2559" y="868"/>
+        </scene>
+        <!--Club LevelVC-->
+        <scene sceneID="4XG-fZ-PI2">
+            <objects>
+                <viewController id="cZG-nI-Tyq" customClass="ClubLevelVC" customModule="MyBadminton" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4KK-Tc-zI0"/>
+                        <viewControllerLayoutGuide type="bottom" id="QI6-73-adT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="umH-FD-ncR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-3Z-7Wm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="VGG-zr-t63"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="clubLevelreuseIdentifier" textLabel="mc3-hg-hW1" style="IBUITableViewCellStyleDefault" id="tX6-Zs-dsf">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tX6-Zs-dsf" id="dTU-y6-OTm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mc3-hg-hW1">
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cZG-nI-Tyq" id="SzD-09-vLz"/>
+                                    <outlet property="delegate" destination="cZG-nI-Tyq" id="ZOF-if-SlM"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0d-03-ak1">
+                                <rect key="frame" x="40" y="280" width="334" height="40"/>
+                                <color key="backgroundColor" red="0.83163467639999999" green="0.1338136181" blue="0.099371815200000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="334" id="2Xi-rD-pTZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="RST-4N-TIO"/>
+                                </constraints>
+                                <state key="normal" title="決定">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5qN-9C-tve" kind="unwind" identifier="backToCreateClubViewFromClubLevelVC" unwindAction="tapToBackToCreateClubTVCWithSegue:" id="Ixu-Ia-vAZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rja-3Z-7Wm" firstAttribute="leading" secondItem="umH-FD-ncR" secondAttribute="leading" id="F28-Z1-ych"/>
+                            <constraint firstAttribute="trailing" secondItem="Rja-3Z-7Wm" secondAttribute="trailing" id="HMP-xs-hTO"/>
+                            <constraint firstItem="I0d-03-ak1" firstAttribute="top" secondItem="Rja-3Z-7Wm" secondAttribute="bottom" constant="30" id="QSC-k7-XsY"/>
+                            <constraint firstItem="Rja-3Z-7Wm" firstAttribute="top" secondItem="umH-FD-ncR" secondAttribute="top" id="cgX-fH-jHN"/>
+                            <constraint firstItem="I0d-03-ak1" firstAttribute="centerX" secondItem="umH-FD-ncR" secondAttribute="centerX" id="srb-6i-bzl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Rja-3Z-7Wm" id="M92-91-xng"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TF-h3-WVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5qN-9C-tve" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3300.0000000000005" y="969.29347826086962"/>
         </scene>
         <!--City NameTVC-->
         <scene sceneID="Bdy-xU-GWB">

@@ -16,14 +16,20 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var clubExplanationTV: UITextView!
     
     @IBOutlet weak var courtDetailLabel: UILabel!
-    
+    @IBOutlet weak var clubLevelLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
     @IBAction func tapToBackToCreateClubTVC (segue: UIStoryboardSegue) {
     
         
     }
+    var clubCourtNum : String!
     var clubAddress : ClubAddress!
+    
+    var clubLevel = [ClubLevel(name: "初級",select: false),
+                     ClubLevel(name: "中級",select: false),
+                     ClubLevel(name: "上級",select: false)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         clubExplanationTV.placeholder = "クラブの紹介（任意1,000文字以内）\n紹介するために紹介するために紹介するために紹介するために紹介するために）\n\n例）ために紹介するために"
@@ -42,10 +48,27 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //When unwind from NumberOfCourtTVC to CreateClubTVC, assign courtDetailLabel to new value
+        if let _clubCourtNum = clubCourtNum {
+            courtDetailLabel.text = _clubCourtNum
+        }
+        //When unwind from AddAddressView to CreateClubTVC, assign addressLabel to new value
         if let _clubAddress = clubAddress {
             addressLabel.text = _clubAddress.cityName
             
         }
+        //When unwind from ClubLevelView to CreateClubTVC, assign clubLevelLabel.text to new value
+        var str = ""
+        for eachClubLevel in clubLevel {
+            if eachClubLevel.select {
+                str = str + eachClubLevel.name! + "、"
+            }
+        }
+        if str != "" {
+            clubLevelLabel.text = str.substring(to: str.index(before: str.endIndex))
+        }
+        
+        
     }
     
     func handleTextField() {
@@ -125,14 +148,17 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNumberOfCourtView" {
             let destinationController = segue.destination as! NumberOfCourtTVC
-            destinationController.currentNumberOfCourt = courtDetailLabel.text
-            
+            destinationController.clubCourtNum = clubCourtNum
             
         }
         if segue.identifier == "showAddAddress" {
             let destinationController = segue.destination as! AddAddress
             destinationController.clubAddress = clubAddress
             
+        }
+        if segue.identifier == "showClubLevel" {
+            let destinationController = segue.destination as! ClubLevelVC
+            destinationController.clubLevel = clubLevel
         }
     }
     

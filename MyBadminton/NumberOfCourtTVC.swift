@@ -9,7 +9,7 @@
 import UIKit
 
 class NumberOfCourtTVC: UITableViewController {
-    var currentNumberOfCourt: String!
+    var clubCourtNum: String!
     let court = ["1面","2面","3面","4面","5面","6面"]
     
     override func viewDidLoad() {
@@ -50,15 +50,19 @@ class NumberOfCourtTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courtRowIdentifier", for: indexPath)
 
         cell.textLabel?.text = court[indexPath.row]
+        
         cell.detailTextLabel?.text = ""
-        cell.accessoryType = court[indexPath.row] == currentNumberOfCourt ? .checkmark : .none
+        if clubCourtNum != nil {
+                cell.accessoryType = court[indexPath.row] == clubCourtNum ? .checkmark : .none
+        }
+        
         return cell
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backToCreateClubView" {
+        if segue.identifier == "backToCreateClubViewFromNumberOfCourtTVC" {
             let destinationController = segue.destination as! CreateClubTVC
-            destinationController.courtDetailLabel.text = court[self.tableView.indexPathForSelectedRow!.row]
+            destinationController.clubCourtNum = court[self.tableView.indexPathForSelectedRow!.row]
             
         }
     }
