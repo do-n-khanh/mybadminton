@@ -51,6 +51,7 @@ class AddAddress: UITableViewController {
             address1TextField.text = _clubAddress.address1
             address2TextField.text = _clubAddress.address2
             cityNameLabel.textColor = UIColor.black
+            
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

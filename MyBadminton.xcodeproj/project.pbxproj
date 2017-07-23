@@ -20,6 +20,11 @@
 		75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */; };
 		75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D9B1F1DE95000FBF56D /* AddAddress.swift */; };
 		75004D9E1F1DF35300FBF56D /* CityNameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */; };
+		7511E3241F21B73D00CAAA80 /* RegularScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511E3231F21B73D00CAAA80 /* RegularScheduleVC.swift */; };
+		7518800E1F22B4FC00566D11 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518800D1F22B4FC00566D11 /* Problem.swift */; };
+		751880101F22C18A00566D11 /* RegularScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */; };
+		751880121F22ED6300566D11 /* IrregularScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751880111F22ED6300566D11 /* IrregularScheduleVC.swift */; };
+		751880141F22EE6B00566D11 /* IrregularScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751880131F22EE6B00566D11 /* IrregularScheduleCell.swift */; };
 		75547A541F11EF82008955D0 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A531F11EF82008955D0 /* MyPage.storyboard */; };
 		75547A571F11F372008955D0 /* CreateClub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75547A551F11F372008955D0 /* CreateClub.storyboard */; };
 		75F206AC1F1F2DFF002FF0C3 /* ClubAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */; };
@@ -46,6 +51,11 @@
 		75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberOfCourtTVC.swift; sourceTree = "<group>"; };
 		75004D9B1F1DE95000FBF56D /* AddAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddress.swift; sourceTree = "<group>"; };
 		75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityNameTVC.swift; sourceTree = "<group>"; };
+		7511E3231F21B73D00CAAA80 /* RegularScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularScheduleVC.swift; sourceTree = "<group>"; };
+		7518800D1F22B4FC00566D11 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularScheduleCell.swift; sourceTree = "<group>"; };
+		751880111F22ED6300566D11 /* IrregularScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularScheduleVC.swift; sourceTree = "<group>"; };
+		751880131F22EE6B00566D11 /* IrregularScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularScheduleCell.swift; sourceTree = "<group>"; };
 		75547A531F11EF82008955D0 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		75547A561F11F372008955D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateClub.storyboard; sourceTree = "<group>"; };
 		75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubAddress.swift; sourceTree = "<group>"; };
@@ -96,6 +106,7 @@
 				18B364CC1EF003FD001EBB2B /* Supporting Files */,
 				75DAAEFF1F1075C600744E14 /* StoryBoard */,
 				1816FB241EEBDFED00B2119F /* MyBadminton.xcdatamodeld */,
+				7518800D1F22B4FC00566D11 /* Problem.swift */,
 			);
 			path = MyBadminton;
 			sourceTree = "<group>";
@@ -138,6 +149,10 @@
 				75004D9B1F1DE95000FBF56D /* AddAddress.swift */,
 				75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */,
 				75F206AF1F202DFB002FF0C3 /* ClubLevelVC.swift */,
+				7511E3231F21B73D00CAAA80 /* RegularScheduleVC.swift */,
+				7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */,
+				751880111F22ED6300566D11 /* IrregularScheduleVC.swift */,
+				751880131F22EE6B00566D11 /* IrregularScheduleCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -304,17 +319,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751880141F22EE6B00566D11 /* IrregularScheduleCell.swift in Sources */,
 				1816FB201EEBDFED00B2119F /* ViewController.swift in Sources */,
 				75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */,
+				7511E3241F21B73D00CAAA80 /* RegularScheduleVC.swift in Sources */,
 				75F206AC1F1F2DFF002FF0C3 /* ClubAddress.swift in Sources */,
 				75F206B01F202DFB002FF0C3 /* ClubLevelVC.swift in Sources */,
 				18926C4C1EF6CB7000B70473 /* UITextViewPlaceholder.swift in Sources */,
 				75004D9E1F1DF35300FBF56D /* CityNameTVC.swift in Sources */,
+				7518800E1F22B4FC00566D11 /* Problem.swift in Sources */,
 				75F206B21F204C51002FF0C3 /* ClubLevel.swift in Sources */,
 				1816FB1E1EEBDFED00B2119F /* AppDelegate.swift in Sources */,
 				18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */,
+				751880101F22C18A00566D11 /* RegularScheduleCell.swift in Sources */,
 				1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */,
 				75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */,
+				751880121F22ED6300566D11 /* IrregularScheduleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

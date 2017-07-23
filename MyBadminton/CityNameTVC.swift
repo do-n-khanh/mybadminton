@@ -71,8 +71,6 @@ class CityNameTVC: UITableViewController {
             }
             destinationController.clubAddress = clubAddress
             
-            destinationController.cityNameLabel.textColor = UIColor.black
-        //    destinationController.wardTextField.edd
             
         }
     }

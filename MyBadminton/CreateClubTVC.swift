@@ -18,11 +18,38 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var courtDetailLabel: UILabel!
     @IBOutlet weak var clubLevelLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var membershipFee: UITextField!
     
+    @IBOutlet weak var visitorFee: UITextField!
     @IBAction func tapToBackToCreateClubTVC (segue: UIStoryboardSegue) {
     
         
     }
+    @IBOutlet var yesButton:UIButton!
+    @IBOutlet var noButton:UIButton!
+    
+    @IBAction func toggleBeenHereButton(sender: UIButton) {
+        // Yes button clicked
+        if sender == yesButton {
+            isVisited = true
+            
+            // Change the backgroundColor property of yesButton to red
+            yesButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+            
+            // Change the backgroundColor property of noButton to gray
+            noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+            
+        } else if sender == noButton {
+            isVisited = false
+            
+            // Change the backgroundColor property of yesButton to gray
+            yesButton.backgroundColor = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+            
+            // Change the backgroundColor property of noButton to red
+            noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+        }
+    }
+    var isVisited: Bool!
     var clubCourtNum : String!
     var clubAddress : ClubAddress!
     
@@ -41,13 +68,51 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         
         handleTextField()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
-            
-        //clubAddress = ClubAddress(postCode: "", cityName: "へろ", ward: "", address1: "", address2: "")
+        addDoneBtnToKeyboard()
         
     }
     
+    func addDoneBtnToKeyboard() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.isTranslucent = false
+        keyboardToolbar.barTintColor = UIColor.lightGray
+        //creating flexibleSpace
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(CreateClubTVC.hideKeyboard)
+        )
+        
+        addButton.tintColor = UIColor.black
+        
+        keyboardToolbar.items = [flexibleSpace,addButton]
+        
+        membershipFee.inputAccessoryView = keyboardToolbar
+        visitorFee.inputAccessoryView
+         = keyboardToolbar
+        clubNameTextField.inputAccessoryView = keyboardToolbar
+        clubExplanationTV.inputAccessoryView = keyboardToolbar
+    }
+    func hideKeyboard() {
+        
+        if membershipFee.isEditing {
+                membershipFee.endEditing(true)
+        }
+        if visitorFee.isEditing {
+                visitorFee.endEditing(true)
+        }
+        if clubNameTextField.isEditing {
+                clubNameTextField.endEditing(true)
+        }
+        
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         //When unwind from NumberOfCourtTVC to CreateClubTVC, assign courtDetailLabel to new value
         if let _clubCourtNum = clubCourtNum {
             courtDetailLabel.text = _clubCourtNum
