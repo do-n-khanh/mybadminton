@@ -23,7 +23,7 @@
 //  SOFTWARE.
 
 import UIKit
-
+let label2 = UILabel()
 /// Extend UITextView and implemented UITextViewDelegate to listen for changes
 extension UITextView: UITextViewDelegate {
     
@@ -52,6 +52,7 @@ extension UITextView: UITextViewDelegate {
             } else {
                 self.addPlaceholder(newValue!)
             }
+            self.addDoneBtnAndCountLabelToKeyboard2()
         }
     }
     
@@ -61,6 +62,17 @@ extension UITextView: UITextViewDelegate {
     public func textViewDidChange(_ textView: UITextView) {
         if let placeholderLabel = self.viewWithTag(100) as? UILabel {
             placeholderLabel.isHidden = self.text.characters.count > 0
+            label2.text = "\(textView.text.characters.count)/1000"
+            if self.text.characters.count > 1000 {
+                let range = NSRange(location:0,length:4) // specific location. This means "range" handle 1 character at location 2
+                let attributedString  = NSMutableAttributedString(string: label2.text!)
+                attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: range)
+                label2.attributedText = attributedString
+            } else
+            {
+                label2.textColor = UIColor.black
+            }
+            
         }
     }
     
@@ -95,5 +107,31 @@ extension UITextView: UITextViewDelegate {
         self.resizePlaceholder()
         self.delegate = self
     }
-    
+    func addDoneBtnAndCountLabelToKeyboard2() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.isTranslucent = false
+        keyboardToolbar.barTintColor = UIColor.lightGray
+        //creating flexibleSpace
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(hideKeyboard)
+        )
+        label2.text = " 0/1000        "
+        label2.sizeToFit()
+        let addLabel = UIBarButtonItem.init(customView: label2)
+        addButton.tintColor = UIColor.black
+        keyboardToolbar.items = [addLabel, flexibleSpace,addButton]
+        
+        self.inputAccessoryView = keyboardToolbar
+    }
+    func hideKeyboard() {
+        
+       self.endEditing(true)
+        
+    }
+
 }

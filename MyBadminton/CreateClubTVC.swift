@@ -28,10 +28,11 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
     
+    
     @IBAction func toggleBeenHereButton(sender: UIButton) {
         // Yes button clicked
         if sender == yesButton {
-            isVisited = true
+            hasCarParking = true
             
             // Change the backgroundColor property of yesButton to red
             yesButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
@@ -40,7 +41,7 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
             noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)
             
         } else if sender == noButton {
-            isVisited = false
+            hasCarParking = false
             
             // Change the backgroundColor property of yesButton to gray
             yesButton.backgroundColor = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)
@@ -49,9 +50,10 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
             noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
         }
     }
-    var isVisited: Bool!
+    var hasCarParking: Bool!
     var clubCourtNum : String!
     var clubAddress : ClubAddress!
+    let label1 = UILabel()
     
     var clubLevel = [ClubLevel(name: "初級",select: false),
                      ClubLevel(name: "中級",select: false),
@@ -69,8 +71,13 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         handleTextField()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         addDoneBtnToKeyboard()
+        addDoneBtnAndCountLabelToKeyboard1()
+        
         
     }
+    
+   
+    
     
     func addDoneBtnToKeyboard() {
         let keyboardToolbar = UIToolbar()
@@ -86,6 +93,7 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
             action: #selector(CreateClubTVC.hideKeyboard)
         )
         
+        
         addButton.tintColor = UIColor.black
         
         keyboardToolbar.items = [flexibleSpace,addButton]
@@ -93,21 +101,46 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         membershipFee.inputAccessoryView = keyboardToolbar
         visitorFee.inputAccessoryView
          = keyboardToolbar
-        clubNameTextField.inputAccessoryView = keyboardToolbar
-        clubExplanationTV.inputAccessoryView = keyboardToolbar
+       
     }
+    
+    
+    func addDoneBtnAndCountLabelToKeyboard1() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.isTranslucent = false
+        keyboardToolbar.barTintColor = UIColor.lightGray
+        //creating flexibleSpace
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(hideKeyboard)
+        )
+        label1.text = " 0/40  "
+        label1.sizeToFit()
+        let addLabel = UIBarButtonItem.init(customView: label1)
+        addButton.tintColor = UIColor.black
+        keyboardToolbar.items = [addLabel, flexibleSpace,addButton]
+        clubNameTextField.inputAccessoryView = keyboardToolbar
+       
+    }
+    
+    
+    
+    
     func hideKeyboard() {
         
         if membershipFee.isEditing {
                 membershipFee.endEditing(true)
-        }
+        } else
         if visitorFee.isEditing {
                 visitorFee.endEditing(true)
-        }
+        } else
         if clubNameTextField.isEditing {
                 clubNameTextField.endEditing(true)
         }
-        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -137,10 +170,25 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func handleTextField() {
-        clubNameTextField.addTarget(self, action: #selector(CreateClubTVC.textFieldDidChange), for: UIControlEvents.editingChanged)
+        clubNameTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
+  
+    
+    
     func textFieldDidChange(){
+        label1.text = "\(clubNameTextField.text?.characters.count ?? 0)/40"
+        if (clubNameTextField.text?.characters.count)! > 40 {
+            let range = NSRange(location:0,length:2) // specific location. This means "range" handle 1 character at location 2
+            let attributedString  = NSMutableAttributedString(string: label1.text!)
+            attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: range)
+            label1.attributedText = attributedString
+            
+        } else
+        {
+            label1.textColor = UIColor.black
+        }
+        
         
         guard let clubName = clubNameTextField.text, !clubName.isEmpty else {
             //If does not satisfied condition
