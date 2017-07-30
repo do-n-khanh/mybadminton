@@ -39,9 +39,52 @@ class AddAddress: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.title = "住所"
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
+        addDoneBtnToKeyboard()
         
     }
+    func addDoneBtnToKeyboard() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.isTranslucent = false
+        keyboardToolbar.barTintColor = UIColor.lightGray
+        //creating flexibleSpace
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(hideKeyboard)
+        )
+        
+        
+        addButton.tintColor = UIColor.black
+        
+        keyboardToolbar.items = [flexibleSpace,addButton]
+        
+        postCodeTextField.inputAccessoryView = keyboardToolbar
+        wardTextField.inputAccessoryView = keyboardToolbar
+        address1TextField.inputAccessoryView = keyboardToolbar
+        address2TextField.inputAccessoryView = keyboardToolbar
+        
+    }
+    
+    func hideKeyboard() {
+        
+        if postCodeTextField.isEditing {
+            postCodeTextField.endEditing(true)
+        }
+        if wardTextField.isEditing {
+            wardTextField.endEditing(true)
+        }
+        if address1TextField.isEditing {
+            address1TextField.endEditing(true)
+        }
+        if address2TextField.isEditing {
+            address2TextField.endEditing(true)
+        }
+        
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         if let _clubAddress = clubAddress {
@@ -67,6 +110,7 @@ class AddAddress: UITableViewController {
             clubAddress = ClubAddress(postCode: postCodeTextField.text!, cityName: cityNameLabel.text!, ward: wardTextField.text!, address1: address1TextField.text!, address2: address2TextField.text!)
             let destinationController = segue.destination as! CreateClubTVC
             destinationController.clubAddress = clubAddress
+            destinationController.addressLabel.textColor = UIColor.black
         }
     }
     override func didReceiveMemoryWarning() {

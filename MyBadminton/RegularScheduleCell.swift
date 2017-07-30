@@ -71,7 +71,7 @@ class RegularScheduleCell: UITableViewCell,UIPickerViewDelegate,UIPickerViewData
     }
     func addDay() {
         
-        //dayInWeek.text = daysInWeek[dayPicker.selectedRow(inComponent: 1)]
+        dayInWeek.text = daysInWeek[dayPicker.selectedRow(inComponent: 0)]
         dayInWeek.endEditing(true)
         
     }

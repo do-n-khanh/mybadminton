@@ -68,6 +68,7 @@ class ClubLevelVC: UIViewController, UITableViewDataSource,UITableViewDelegate {
         if segue.identifier == "backToCreateClubViewFromClubLevelVC" {
             let destinationController = segue.destination as! CreateClubTVC
             destinationController.clubLevel = clubLevel
+            destinationController.clubLevelLabel.textColor = UIColor.black
             
             
         }

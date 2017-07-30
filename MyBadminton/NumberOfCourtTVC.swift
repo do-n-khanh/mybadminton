@@ -63,7 +63,7 @@ class NumberOfCourtTVC: UITableViewController {
         if segue.identifier == "backToCreateClubViewFromNumberOfCourtTVC" {
             let destinationController = segue.destination as! CreateClubTVC
             destinationController.clubCourtNum = court[self.tableView.indexPathForSelectedRow!.row]
-            
+            destinationController.courtDetailLabel.textColor = UIColor.black
         }
     }
 

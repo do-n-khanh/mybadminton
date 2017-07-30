@@ -13,7 +13,12 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     var numOfRow = 1
+    var allCellsText = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -43,10 +48,13 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "RegularScheduleCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RegularScheduleCell
+        
         return cell
         
         
     }
+    
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             
@@ -56,11 +64,7 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
         tableView.reloadData()
         }
     }
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-       // let rowContent = self.arrPlayerNumber[sourceIndexPath.row]
-      //  self.arrPlayerNumber.remove(at: sourceIndexPath.row)
-     //   self.arrPlayerNumber.insert(rowContent, at: destinationIndexPath.row)
-    }
+    
     
     func insertNewRow(_ sender: UIBarButtonItem) {
         if numOfRow < 7 {
@@ -76,6 +80,50 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
         super.setEditing(editing, animated: animated)
         tableView.setEditing(editing, animated: animated)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToCreateClubTVCFromRegularScheduleVC" {
+            var clubScheduleArray : [ClubSchedule] = []
+            
+            for i in 0...numOfRow-1 {
+                let indexPath = IndexPath(row: i, section: 0)
+                let cell = tableView.cellForRow(at: indexPath) as! RegularScheduleCell
+                clubScheduleArray.append(ClubSchedule(type: "regular", dayInWeek: cell.dayInWeek.text!, day: "", startTime: cell.startTime.text!, endTime: cell.endTime.text!))
+                
+            }
+            
+            
+            let destinationController = segue.destination as! CreateClubTVC
+            destinationController.clubScheduleArray = clubScheduleArray
+            destinationController.scheduleLabel.text = "設定済み"
+            destinationController.scheduleLabel.textColor = UIColor.black
+        }
+    }
     
-    
+    @IBAction func submitBtnAction(_ sender: UIButton) {
+        
+        //Check if all fields are filled
+        var pass = true
+        for i in 0...numOfRow-1 {
+            let indexPath = IndexPath(row: i, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! RegularScheduleCell
+            if cell.dayInWeek.text == nil || cell.dayInWeek.text!.isEmpty || cell.endTime.text == nil || cell.endTime.text!.isEmpty || cell.endTime.text == nil || cell.endTime.text!.isEmpty   {
+                pass = false
+                break
+            }
+        }
+        
+        
+        if pass {
+            
+                performSegue(withIdentifier: "backToCreateClubTVCFromRegularScheduleVC", sender: self)
+        } else {
+            let alert = UIAlertController(title: "エラー", message: "すべて設定してください", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+    }
 }

@@ -21,6 +21,7 @@
 		75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D9B1F1DE95000FBF56D /* AddAddress.swift */; };
 		75004D9E1F1DF35300FBF56D /* CityNameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */; };
 		7511E3241F21B73D00CAAA80 /* RegularScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511E3231F21B73D00CAAA80 /* RegularScheduleVC.swift */; };
+		751661381F270B600066AE8C /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751661371F270B600066AE8C /* Club.swift */; };
 		7518800E1F22B4FC00566D11 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518800D1F22B4FC00566D11 /* Problem.swift */; };
 		751880101F22C18A00566D11 /* RegularScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */; };
 		751880121F22ED6300566D11 /* IrregularScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751880111F22ED6300566D11 /* IrregularScheduleVC.swift */; };
@@ -30,6 +31,8 @@
 		75F206AC1F1F2DFF002FF0C3 /* ClubAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */; };
 		75F206B01F202DFB002FF0C3 /* ClubLevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F206AF1F202DFB002FF0C3 /* ClubLevelVC.swift */; };
 		75F206B21F204C51002FF0C3 /* ClubLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F206B11F204C51002FF0C3 /* ClubLevel.swift */; };
+		75F572561F282AC100F9A674 /* ScheduleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F572551F282AC100F9A674 /* ScheduleTVC.swift */; };
+		75F76E5B1F29C4EB00798140 /* ClubSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F76E5A1F29C4EB00798140 /* ClubSchedule.swift */; };
 		75FABDEC1F11B03000C22FB9 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FABDEA1F11B03000C22FB9 /* Discovery.storyboard */; };
 		A5A181879B52DF966A7B2319 /* Pods_MyBadminton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,7 @@
 		75004D9B1F1DE95000FBF56D /* AddAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddress.swift; sourceTree = "<group>"; };
 		75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityNameTVC.swift; sourceTree = "<group>"; };
 		7511E3231F21B73D00CAAA80 /* RegularScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularScheduleVC.swift; sourceTree = "<group>"; };
+		751661371F270B600066AE8C /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		7518800D1F22B4FC00566D11 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularScheduleCell.swift; sourceTree = "<group>"; };
 		751880111F22ED6300566D11 /* IrregularScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularScheduleVC.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubAddress.swift; sourceTree = "<group>"; };
 		75F206AF1F202DFB002FF0C3 /* ClubLevelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubLevelVC.swift; sourceTree = "<group>"; };
 		75F206B11F204C51002FF0C3 /* ClubLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubLevel.swift; sourceTree = "<group>"; };
+		75F572551F282AC100F9A674 /* ScheduleTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTVC.swift; sourceTree = "<group>"; };
+		75F76E5A1F29C4EB00798140 /* ClubSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubSchedule.swift; sourceTree = "<group>"; };
 		75FABDEB1F11B03000C22FB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
 		CD2298D4B3BED2C36F79E36D /* Pods-MyBadminton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.debug.xcconfig"; sourceTree = "<group>"; };
 		F29BDB1EEDF64A3F370E3C24 /* Pods_MyBadminton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBadminton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +134,8 @@
 			children = (
 				75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */,
 				75F206B11F204C51002FF0C3 /* ClubLevel.swift */,
+				751661371F270B600066AE8C /* Club.swift */,
+				75F76E5A1F29C4EB00798140 /* ClubSchedule.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 				7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */,
 				751880111F22ED6300566D11 /* IrregularScheduleVC.swift */,
 				751880131F22EE6B00566D11 /* IrregularScheduleCell.swift */,
+				75F572551F282AC100F9A674 /* ScheduleTVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -321,6 +330,7 @@
 			files = (
 				751880141F22EE6B00566D11 /* IrregularScheduleCell.swift in Sources */,
 				1816FB201EEBDFED00B2119F /* ViewController.swift in Sources */,
+				75F76E5B1F29C4EB00798140 /* ClubSchedule.swift in Sources */,
 				75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */,
 				7511E3241F21B73D00CAAA80 /* RegularScheduleVC.swift in Sources */,
 				75F206AC1F1F2DFF002FF0C3 /* ClubAddress.swift in Sources */,
@@ -331,8 +341,10 @@
 				75F206B21F204C51002FF0C3 /* ClubLevel.swift in Sources */,
 				1816FB1E1EEBDFED00B2119F /* AppDelegate.swift in Sources */,
 				18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */,
+				75F572561F282AC100F9A674 /* ScheduleTVC.swift in Sources */,
 				751880101F22C18A00566D11 /* RegularScheduleCell.swift in Sources */,
 				1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */,
+				751661381F270B600066AE8C /* Club.swift in Sources */,
 				75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */,
 				751880121F22ED6300566D11 /* IrregularScheduleVC.swift in Sources */,
 			);

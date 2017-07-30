@@ -13,6 +13,11 @@ class IrregularScheduleVC: UIViewController, UITableViewDelegate,UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func cancelBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
     var numOfRow = 1
     override func viewDidLoad() {
         super.viewDidLoad()

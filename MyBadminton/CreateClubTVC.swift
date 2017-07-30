@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabaseUI
+import FirebaseStorage
 
 class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var cameraUIView: UIView!
@@ -15,11 +17,13 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var createClubBtnOutlet: UIButton!
     @IBOutlet weak var clubExplanationTV: UITextView!
     
+    @IBOutlet weak var cameraLabel: UILabel!
     @IBOutlet weak var courtDetailLabel: UILabel!
     @IBOutlet weak var clubLevelLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var membershipFee: UITextField!
     
+    @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var visitorFee: UITextField!
     @IBAction func tapToBackToCreateClubTVC (segue: UIStoryboardSegue) {
     
@@ -50,15 +54,18 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
             noButton.backgroundColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
         }
     }
+    var ref: DatabaseReference!
+    var club : Club!
+    
     var hasCarParking: Bool!
     var clubCourtNum : String!
     var clubAddress : ClubAddress!
     let label1 = UILabel()
-    
+    var selectedImage : UIImage?
     var clubLevel = [ClubLevel(name: "初級",select: false),
                      ClubLevel(name: "中級",select: false),
                      ClubLevel(name: "上級",select: false)]
-    
+    var clubScheduleArray : [ClubSchedule] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         clubExplanationTV.placeholder = "クラブの紹介（任意1,000文字以内）\n紹介するために紹介するために紹介するために紹介するために紹介するために）\n\n例）ために紹介するために"
@@ -231,8 +238,9 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
         // Your action
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            cameraUIImageView.image = selectedImage
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectedImage = image
+            cameraUIImageView.image = image
             cameraUIImageView.contentMode = .scaleAspectFill
             cameraUIImageView.clipsToBounds = true
             
@@ -251,6 +259,8 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
             
         }
         dismiss(animated: true, completion: nil)
+        cameraLabel.text = ""
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -276,6 +286,112 @@ class CreateClubTVC: UITableViewController, UIImagePickerControllerDelegate, UIN
     }
     
    
+    @IBAction func createClubAction(_ sender: Any) {
+        
+        ref = Database.database().reference()
+        
+        let clubRef = ref.child("clubs").childByAutoId()
+        
+        
+        
+        let storageRef = Storage.storage().reference(forURL: "gs://mybadminton-69451.appspot.com").child("club_photo").child(clubRef.key)
+        let imageData = UIImageJPEGRepresentation(selectedImage!, 0.5)
+        storageRef.putData(imageData!, metadata: nil) { (metadata, error) in
+            if error != nil {
+                return
+            }
+            let downloadURL = metadata?.downloadURL()?.absoluteString
+            clubRef.setValue(["name":self.clubNameTextField.text!,"clubPhoto":downloadURL])
+            print(clubRef.key)
+
+        }
+        
+        
+        var message = ""
+        if cameraLabel.text == "(必須)" {
+            message = "写真を登録してください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            
+        } else if clubNameTextField.text == "" {
+            message = "クラブ名を記入ください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            
+        } else if clubExplanationTV.text == "" {
+            message = "クラブの紹介を記入ください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            
+        } else if courtDetailLabel.text == "設定してください" {
+            message = "面数を設定してください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        } else if clubLevelLabel.text == "設定してください" {
+            message = "レベルを設定してください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        } else if scheduleLabel.text == "設定してください" {
+            message = "練習日時を設定してください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        } else if addressLabel.text == "設定してください" {
+            message = "練習日時を設定してください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        } else if membershipFee.text == "" {
+            message = "会員費を設定してください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        } else if visitorFee.text == "" {
+            message = "ビジターを設定してください"
+            let alert = UIAlertController(title: "エラー", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (UIAlertAction) in}
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            print("create club")
+            
+            
+//            club.name = clubNameTextField.text!
+//            club.explanation = clubExplanationTV.text!
+//            club.courtNum = clubCourtNum
+//            club.level = clubLevel
+//            club.schedule = clubScheduleArray
+//            club.address = clubAddress
+//            club.membershipFee = membershipFee.text!
+//            club.visitorFee = visitorFee.text!
+//            club.hasCarParking = hasCarParking
+           // club.create()
+            
+        }
+        
+    }
     
     
 

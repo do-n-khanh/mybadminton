@@ -40,21 +40,23 @@ class ViewController: UIViewController, FUIAuthDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLoggedIn()
         ref = Database.database().reference()
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        checkLoggedIn()
+        
     }
     func checkLoggedIn() {
         
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
-                self.userInfoLabel.text = user!.displayName!
-                self.logOutButton.isHidden = false
+//                self.userInfoLabel.text = user!.displayName!
+//                self.logOutButton.isHidden = false
+                
             } else {
                 // No user is signed in.
                 self.login()
@@ -89,13 +91,18 @@ class ViewController: UIViewController, FUIAuthDelegate  {
         }else {
             //User is in! Here is where we code after signing in
             //create new user in realtime database
-            let userRef = ref.child("users")
-            let uid = user?.uid
-            let uemail = user!.email
             
-            let newUserRef = userRef.child(uid!)
-            newUserRef.setValue(["displayName":user!])
-            print("Users is in and newUserRef is \(newUserRef)")
+            let uId = user!.uid
+            let uEmail = user!.email ?? ""
+            let uDisplayName = user!.displayName ?? ""
+            let uPhotoURL = user!.photoURL?.absoluteString ?? ""
+            
+            let userRef = ref.child("users")
+            let newUserRef = userRef.child(uId)
+            
+            newUserRef.setValue(["displayName":uDisplayName,"email":uEmail,"photoURL":uPhotoURL])
+            
+            
             
         }
     }
