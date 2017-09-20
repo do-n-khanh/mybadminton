@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ScheduleTVC: UITableViewController {
 
+class ScheduleTVC: UITableViewController {
+    var schedules : [ClubSchedule] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,5 +86,26 @@ class ScheduleTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "scheduleTVCToRegularScheduleVC" {
+            if !schedules.isEmpty && schedules[0].type == "regular" {
+                let destinationController = segue.destination as! RegularScheduleVC
+                destinationController.numOfRow = schedules.count
+                destinationController.schedules = schedules
+            }
+            
+            
+        }
+        if segue.identifier == "scheduleTVCToIrregularScheduleVC" {
+            if !schedules.isEmpty && schedules[0].type == "irregular" {
+                let destinationController = segue.destination as! IrregularScheduleVC
+                destinationController.numOfRow = schedules.count
+                destinationController.schedules = schedules
+            }
+            
+        }
+    }
 
 }

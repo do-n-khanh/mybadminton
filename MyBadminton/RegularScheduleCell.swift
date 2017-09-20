@@ -96,7 +96,7 @@ class RegularScheduleCell: UITableViewCell,UIPickerViewDelegate,UIPickerViewData
         startTime.inputAccessoryView = timePickerToolbar
         timePicker.datePickerMode = .time
         timePicker.minuteInterval = 10
-        //timePicker.locale = Locale(identifier: "ja_JP")
+        
         startTime.inputView = timePicker
         endTime.inputAccessoryView = timePickerToolbar
         endTime.inputView = timePicker
@@ -107,7 +107,9 @@ class RegularScheduleCell: UITableViewCell,UIPickerViewDelegate,UIPickerViewData
     func addTime() {
         
         //Format time
+        
         let timeFormatter = DateFormatter()
+        timeFormatter.locale = Locale(identifier: "ja_JP")
         timeFormatter.timeStyle = .short
         if startTime.isEditing {
             startTime.text = timeFormatter.string(from: timePicker.date)

@@ -17,16 +17,16 @@ import FirebaseFacebookAuthUI
 import FirebaseTwitterAuthUI
 import FBSDKCoreKit
 import FBSDKLoginKit
+import SDWebImage
 
-
-class ViewController: UIViewController, FUIAuthDelegate  {
+class HomeVC: UIViewController, FUIAuthDelegate  {
     
     @IBOutlet weak var userInfoLabel: UILabel!
     
     @IBOutlet weak var logOutButton: UIButton!
     
     @IBAction func logOutButton(_ sender: UIButton) {
-       try! Auth.auth().signOut()
+        try! Auth.auth().signOut()
         
     }
     var ref: DatabaseReference!
@@ -42,20 +42,41 @@ class ViewController: UIViewController, FUIAuthDelegate  {
         super.viewDidLoad()
         checkLoggedIn()
         ref = Database.database().reference()
-        
+        //loadPhoto()
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    
+    func loadPhoto() {
+        let photoRef = Database.database().reference()
+        
+        photoRef.child("photo").observe(DataEventType.childAdded, with: { (photoSnapshot) in
+            if let photoDict = photoSnapshot.value as? [String : AnyObject] {
+                let image = UIImageView()
+                
+                if let main = photoDict["main"] as? String {
+                    image.sd_setImage(with: URL(string: main)!)
+                    
+                } else if let main = photoDict["sub1"] as? String {
+                    image.sd_setImage(with: URL(string: main)!)
+                } else if let main = photoDict["sub2"] as? String {
+                    image.sd_setImage(with: URL(string: main)!)
+                } else if let main = photoDict["sub3"] as? String {
+                    image.sd_setImage(with: URL(string: main)!)
+                }
+            }
+        })
         
     }
+    
+    
     func checkLoggedIn() {
         
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
-//                self.userInfoLabel.text = user!.displayName!
-//                self.logOutButton.isHidden = false
+                //                self.userInfoLabel.text = user!.displayName!
+                //                self.logOutButton.isHidden = false
                 
             } else {
                 // No user is signed in.
@@ -79,11 +100,11 @@ class ViewController: UIViewController, FUIAuthDelegate  {
         authUI?.delegate = self
         let authViewController = authUI!.authViewController()
         self.present(authViewController, animated: true, completion: nil)
-
+        
         
     }
     public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?){
-    
+        
         if error != nil {
             //Problem signing in
             print("If there is error, call login")
@@ -114,7 +135,7 @@ class ViewController: UIViewController, FUIAuthDelegate  {
     @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue){
         
     }
-   
+    
 }
 
 

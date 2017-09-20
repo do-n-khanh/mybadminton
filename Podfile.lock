@@ -5,6 +5,9 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Chatto (3.1.0)
+  - ChattoAdditions (3.1.0):
+    - Chatto
   - Fabric (1.6.11)
   - FBSDKCoreKit (4.23.0):
     - Bolts (~> 1.7)
@@ -93,17 +96,39 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SwiftDate (4.0.14)
   - TwitterCore (2.8.0):
     - Fabric
   - TwitterKit (2.8.1):
     - TwitterCore (>= 2.8)
 
 DEPENDENCIES:
+  - Chatto (from `https://github.com/badoo/Chatto`, branch `master`)
+  - ChattoAdditions (from `https://github.com/badoo/Chatto`, branch `master`)
   - FirebaseUI (~> 4.0)
+  - SwiftDate (~> 4.0.13)
   - TwitterCore (<= 2.8.0)
+
+EXTERNAL SOURCES:
+  Chatto:
+    :branch: master
+    :git: https://github.com/badoo/Chatto
+  ChattoAdditions:
+    :branch: master
+    :git: https://github.com/badoo/Chatto
+
+CHECKOUT OPTIONS:
+  Chatto:
+    :commit: 16ad3bcb2a03c996ff2f2b04a87d95fff822c7ed
+    :git: https://github.com/badoo/Chatto
+  ChattoAdditions:
+    :commit: 16ad3bcb2a03c996ff2f2b04a87d95fff822c7ed
+    :git: https://github.com/badoo/Chatto
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Chatto: dc39056aed56fcababb857affd8152606afb2b5a
+  ChattoAdditions: 4f54c932c08488fca0a85f211094276f03f4ee60
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
   FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
@@ -120,9 +145,10 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwiftDate: 4ef029fd3117cc287fe642658b9aca2217628976
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: 311ed316c69a5088e803989c75999e3b5d28aa87
+PODFILE CHECKSUM: c0191f4051aeddd8c3414c8bed9c205426d762ae
 
 COCOAPODS: 1.2.1

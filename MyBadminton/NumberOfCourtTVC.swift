@@ -9,8 +9,8 @@
 import UIKit
 
 class NumberOfCourtTVC: UITableViewController {
-    var clubCourtNum: String!
-    let court = ["1面","2面","3面","4面","5面","6面"]
+    var clubCourtNum: Int!
+    let court = [1,2,3,4,5,6]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +49,10 @@ class NumberOfCourtTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courtRowIdentifier", for: indexPath)
 
-        cell.textLabel?.text = court[indexPath.row]
+        cell.textLabel?.text = String(court[indexPath.row]) + "面"
         
         cell.detailTextLabel?.text = ""
-        if clubCourtNum != nil {
+        if clubCourtNum != 0 {
                 cell.accessoryType = court[indexPath.row] == clubCourtNum ? .checkmark : .none
         }
         
@@ -62,8 +62,8 @@ class NumberOfCourtTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToCreateClubViewFromNumberOfCourtTVC" {
             let destinationController = segue.destination as! CreateClubTVC
-            destinationController.clubCourtNum = court[self.tableView.indexPathForSelectedRow!.row]
-            destinationController.courtDetailLabel.textColor = UIColor.black
+            destinationController.club.courtNum = court[self.tableView.indexPathForSelectedRow!.row]
+            destinationController.courtNumLabel.textColor = UIColor.black
         }
     }
 

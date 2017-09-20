@@ -65,6 +65,7 @@ class IrregularScheduleCell: UITableViewCell{
         let scheduleFormatter = DateFormatter()
         scheduleFormatter.dateStyle = .short
         scheduleFormatter.timeStyle = .short
+        scheduleFormatter.locale = Locale(identifier: "ja_JP")
         scheduleText.text = scheduleFormatter.string(from: schedulePicker.date)
         //scheduleText.text = "\(schedulePicker.date)"
         scheduleText.endEditing(true)
@@ -103,7 +104,9 @@ class IrregularScheduleCell: UITableViewCell{
         
         //Format time
         let timeFormatter = DateFormatter()
+        timeFormatter.locale = Locale(identifier: "ja_JP")
         timeFormatter.timeStyle = .short
+        
         
         endTime.text = timeFormatter.string(from: timePicker.date)
         

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1816FB1E1EEBDFED00B2119F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1816FB1D1EEBDFED00B2119F /* AppDelegate.swift */; };
-		1816FB201EEBDFED00B2119F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1816FB1F1EEBDFED00B2119F /* ViewController.swift */; };
 		1816FB231EEBDFED00B2119F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1816FB211EEBDFED00B2119F /* Main.storyboard */; };
 		1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1816FB241EEBDFED00B2119F /* MyBadminton.xcdatamodeld */; };
 		1816FB281EEBDFED00B2119F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1816FB271EEBDFED00B2119F /* Assets.xcassets */; };
@@ -17,11 +16,26 @@
 		18B364CE1EF0044C001EBB2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B364CD1EF0044C001EBB2B /* GoogleService-Info.plist */; };
 		18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D118531EF5A874003A829C /* CreateClubTVC.swift */; };
 		18EA4F461EF7C8280030EF0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EA4F451EF7C8280030EF0E /* MapKit.framework */; };
+		5202743E1F59188E00939E6A /* photoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202743D1F59188E00939E6A /* photoCollectionViewCell.swift */; };
+		520C52B21F566F49006284FD /* DiscoveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C52B11F566F49006284FD /* DiscoveryVC.swift */; };
+		520C52B41F568EE9006284FD /* DiscoveryVCbackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C52B31F568EE9006284FD /* DiscoveryVCbackup.swift */; };
+		520D025B1F5CD0400084B586 /* ClubDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D025A1F5CD0400084B586 /* ClubDetailTVC.swift */; };
+		5226C88D1F45696100D8D14B /* DiscoveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5226C88C1F45696100D8D14B /* DiscoveryCell.swift */; };
+		522887971F721D27003D5D08 /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522887961F721D27003D5D08 /* TextModel.swift */; };
+		522887991F721F76003D5D08 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522887981F721F76003D5D08 /* DataSource.swift */; };
+		5228879B1F722A18003D5D08 /* ChatItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228879A1F722A18003D5D08 /* ChatItemsController.swift */; };
+		5228879D1F72305F003D5D08 /* Decorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228879C1F72305F003D5D08 /* Decorator.swift */; };
+		5228879F1F7233F9003D5D08 /* TextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228879E1F7233F9003D5D08 /* TextBuilder.swift */; };
+		522887A11F724CB8003D5D08 /* TextHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522887A01F724CB8003D5D08 /* TextHandler.swift */; };
+		5266771F1F59605B007D5F2A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266771E1F59605B007D5F2A /* HomeVC.swift */; };
+		52B9EA6F1F43DC9E00691D75 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B9EA6D1F43DC9E00691D75 /* Home.storyboard */; };
+		52C5EAEC1F546C7600F01F4E /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5EAEB1F546C7600F01F4E /* Club.swift */; };
+		52FC4E9D1F71615E0015BA21 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC4E9C1F71615E0015BA21 /* ChatVC.swift */; };
+		52FC4EA01F7163900015BA21 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FC4E9E1F7163900015BA21 /* Chat.storyboard */; };
 		75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */; };
 		75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D9B1F1DE95000FBF56D /* AddAddress.swift */; };
 		75004D9E1F1DF35300FBF56D /* CityNameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */; };
 		7511E3241F21B73D00CAAA80 /* RegularScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511E3231F21B73D00CAAA80 /* RegularScheduleVC.swift */; };
-		751661381F270B600066AE8C /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751661371F270B600066AE8C /* Club.swift */; };
 		7518800E1F22B4FC00566D11 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518800D1F22B4FC00566D11 /* Problem.swift */; };
 		751880101F22C18A00566D11 /* RegularScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */; };
 		751880121F22ED6300566D11 /* IrregularScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751880111F22ED6300566D11 /* IrregularScheduleVC.swift */; };
@@ -40,7 +54,6 @@
 /* Begin PBXFileReference section */
 		1816FB1A1EEBDFED00B2119F /* MyBadminton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBadminton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1816FB1D1EEBDFED00B2119F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1816FB1F1EEBDFED00B2119F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1816FB221EEBDFED00B2119F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1816FB251EEBDFED00B2119F /* MyBadminton.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyBadminton.xcdatamodel; sourceTree = "<group>"; };
 		1816FB271EEBDFED00B2119F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,11 +64,26 @@
 		18D118531EF5A874003A829C /* CreateClubTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClubTVC.swift; sourceTree = "<group>"; };
 		18EA4F451EF7C8280030EF0E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2129ECC31D27E9137D80687C /* Pods-MyBadminton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBadminton.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBadminton/Pods-MyBadminton.release.xcconfig"; sourceTree = "<group>"; };
+		5202743D1F59188E00939E6A /* photoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCollectionViewCell.swift; sourceTree = "<group>"; };
+		520C52B11F566F49006284FD /* DiscoveryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryVC.swift; sourceTree = "<group>"; };
+		520C52B31F568EE9006284FD /* DiscoveryVCbackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryVCbackup.swift; sourceTree = "<group>"; };
+		520D025A1F5CD0400084B586 /* ClubDetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailTVC.swift; sourceTree = "<group>"; };
+		5226C88C1F45696100D8D14B /* DiscoveryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryCell.swift; sourceTree = "<group>"; };
+		522887961F721D27003D5D08 /* TextModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		522887981F721F76003D5D08 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		5228879A1F722A18003D5D08 /* ChatItemsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatItemsController.swift; sourceTree = "<group>"; };
+		5228879C1F72305F003D5D08 /* Decorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decorator.swift; sourceTree = "<group>"; };
+		5228879E1F7233F9003D5D08 /* TextBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBuilder.swift; sourceTree = "<group>"; };
+		522887A01F724CB8003D5D08 /* TextHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextHandler.swift; sourceTree = "<group>"; };
+		5266771E1F59605B007D5F2A /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		52B9EA6E1F43DC9E00691D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		52C5EAEB1F546C7600F01F4E /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
+		52FC4E9C1F71615E0015BA21 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		52FC4E9F1F7163900015BA21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
 		75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberOfCourtTVC.swift; sourceTree = "<group>"; };
 		75004D9B1F1DE95000FBF56D /* AddAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddress.swift; sourceTree = "<group>"; };
 		75004D9D1F1DF35300FBF56D /* CityNameTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityNameTVC.swift; sourceTree = "<group>"; };
 		7511E3231F21B73D00CAAA80 /* RegularScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularScheduleVC.swift; sourceTree = "<group>"; };
-		751661371F270B600066AE8C /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		7518800D1F22B4FC00566D11 /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		7518800F1F22C18A00566D11 /* RegularScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularScheduleCell.swift; sourceTree = "<group>"; };
 		751880111F22ED6300566D11 /* IrregularScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularScheduleVC.swift; sourceTree = "<group>"; };
@@ -132,9 +160,10 @@
 		18B364CF1EF0074C001EBB2B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				522887951F721CDD003D5D08 /* Text Messages */,
 				75F206AB1F1F2DFF002FF0C3 /* ClubAddress.swift */,
 				75F206B11F204C51002FF0C3 /* ClubLevel.swift */,
-				751661371F270B600066AE8C /* Club.swift */,
+				52C5EAEB1F546C7600F01F4E /* Club.swift */,
 				75F76E5A1F29C4EB00798140 /* ClubSchedule.swift */,
 			);
 			name = Model;
@@ -151,7 +180,7 @@
 		18B364D11EF00764001EBB2B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1816FB1F1EEBDFED00B2119F /* ViewController.swift */,
+				5266771E1F59605B007D5F2A /* HomeVC.swift */,
 				18D118531EF5A874003A829C /* CreateClubTVC.swift */,
 				75004D991F1C389000FBF56D /* NumberOfCourtTVC.swift */,
 				75004D9B1F1DE95000FBF56D /* AddAddress.swift */,
@@ -162,14 +191,35 @@
 				751880111F22ED6300566D11 /* IrregularScheduleVC.swift */,
 				751880131F22EE6B00566D11 /* IrregularScheduleCell.swift */,
 				75F572551F282AC100F9A674 /* ScheduleTVC.swift */,
+				5226C88C1F45696100D8D14B /* DiscoveryCell.swift */,
+				520C52B11F566F49006284FD /* DiscoveryVC.swift */,
+				520C52B31F568EE9006284FD /* DiscoveryVCbackup.swift */,
+				5202743D1F59188E00939E6A /* photoCollectionViewCell.swift */,
+				520D025A1F5CD0400084B586 /* ClubDetailTVC.swift */,
+				52FC4E9C1F71615E0015BA21 /* ChatVC.swift */,
+				522887981F721F76003D5D08 /* DataSource.swift */,
+				5228879A1F722A18003D5D08 /* ChatItemsController.swift */,
+				5228879C1F72305F003D5D08 /* Decorator.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		522887951F721CDD003D5D08 /* Text Messages */ = {
+			isa = PBXGroup;
+			children = (
+				522887961F721D27003D5D08 /* TextModel.swift */,
+				5228879E1F7233F9003D5D08 /* TextBuilder.swift */,
+				522887A01F724CB8003D5D08 /* TextHandler.swift */,
+			);
+			name = "Text Messages";
 			sourceTree = "<group>";
 		};
 		75DAAEFF1F1075C600744E14 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
 				1816FB211EEBDFED00B2119F /* Main.storyboard */,
+				52FC4E9E1F7163900015BA21 /* Chat.storyboard */,
+				52B9EA6D1F43DC9E00691D75 /* Home.storyboard */,
 				75547A551F11F372008955D0 /* CreateClub.storyboard */,
 				75547A531F11EF82008955D0 /* MyPage.storyboard */,
 				75FABDEA1F11B03000C22FB9 /* Discovery.storyboard */,
@@ -263,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FC4EA01F7163900015BA21 /* Chat.storyboard in Resources */,
 				75FABDEC1F11B03000C22FB9 /* Discovery.storyboard in Resources */,
 				75547A541F11EF82008955D0 /* MyPage.storyboard in Resources */,
 				75547A571F11F372008955D0 /* CreateClub.storyboard in Resources */,
@@ -270,6 +321,7 @@
 				18B364CE1EF0044C001EBB2B /* GoogleService-Info.plist in Resources */,
 				1816FB281EEBDFED00B2119F /* Assets.xcassets in Resources */,
 				1816FB231EEBDFED00B2119F /* Main.storyboard in Resources */,
+				52B9EA6F1F43DC9E00691D75 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,23 +381,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				751880141F22EE6B00566D11 /* IrregularScheduleCell.swift in Sources */,
-				1816FB201EEBDFED00B2119F /* ViewController.swift in Sources */,
 				75F76E5B1F29C4EB00798140 /* ClubSchedule.swift in Sources */,
+				520D025B1F5CD0400084B586 /* ClubDetailTVC.swift in Sources */,
+				520C52B41F568EE9006284FD /* DiscoveryVCbackup.swift in Sources */,
 				75004D9A1F1C389000FBF56D /* NumberOfCourtTVC.swift in Sources */,
 				7511E3241F21B73D00CAAA80 /* RegularScheduleVC.swift in Sources */,
 				75F206AC1F1F2DFF002FF0C3 /* ClubAddress.swift in Sources */,
+				5202743E1F59188E00939E6A /* photoCollectionViewCell.swift in Sources */,
 				75F206B01F202DFB002FF0C3 /* ClubLevelVC.swift in Sources */,
 				18926C4C1EF6CB7000B70473 /* UITextViewPlaceholder.swift in Sources */,
+				5228879B1F722A18003D5D08 /* ChatItemsController.swift in Sources */,
+				522887991F721F76003D5D08 /* DataSource.swift in Sources */,
 				75004D9E1F1DF35300FBF56D /* CityNameTVC.swift in Sources */,
 				7518800E1F22B4FC00566D11 /* Problem.swift in Sources */,
+				5228879D1F72305F003D5D08 /* Decorator.swift in Sources */,
 				75F206B21F204C51002FF0C3 /* ClubLevel.swift in Sources */,
+				52C5EAEC1F546C7600F01F4E /* Club.swift in Sources */,
 				1816FB1E1EEBDFED00B2119F /* AppDelegate.swift in Sources */,
+				5226C88D1F45696100D8D14B /* DiscoveryCell.swift in Sources */,
+				5266771F1F59605B007D5F2A /* HomeVC.swift in Sources */,
+				520C52B21F566F49006284FD /* DiscoveryVC.swift in Sources */,
+				522887A11F724CB8003D5D08 /* TextHandler.swift in Sources */,
+				522887971F721D27003D5D08 /* TextModel.swift in Sources */,
 				18D118541EF5A874003A829C /* CreateClubTVC.swift in Sources */,
 				75F572561F282AC100F9A674 /* ScheduleTVC.swift in Sources */,
 				751880101F22C18A00566D11 /* RegularScheduleCell.swift in Sources */,
 				1816FB261EEBDFED00B2119F /* MyBadminton.xcdatamodeld in Sources */,
-				751661381F270B600066AE8C /* Club.swift in Sources */,
 				75004D9C1F1DE95000FBF56D /* AddAddress.swift in Sources */,
+				52FC4E9D1F71615E0015BA21 /* ChatVC.swift in Sources */,
+				5228879F1F7233F9003D5D08 /* TextBuilder.swift in Sources */,
 				751880121F22ED6300566D11 /* IrregularScheduleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +431,22 @@
 				1816FB2A1EEBDFED00B2119F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		52B9EA6D1F43DC9E00691D75 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B9EA6E1F43DC9E00691D75 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		52FC4E9E1F7163900015BA21 /* Chat.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52FC4E9F1F7163900015BA21 /* Base */,
+			);
+			name = Chat.storyboard;
 			sourceTree = "<group>";
 		};
 		75547A551F11F372008955D0 /* CreateClub.storyboard */ = {

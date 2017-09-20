@@ -10,7 +10,7 @@ import UIKit
 
 
 class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func cancelBtn(_ sender: UIButton) {
@@ -18,6 +18,7 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
     }
     var numOfRow = 1
     var allCellsText = [String]()
+    var schedules : [ClubSchedule] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,11 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
         let cellIdentifier = "RegularScheduleCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RegularScheduleCell
         
+        if schedules.count != 0 && tableView.visibleCells.count < schedules.count {
+            cell.dayInWeek.text = schedules[indexPath.row].dayInWeek
+            cell.startTime.text = schedules[indexPath.row].startTime
+            cell.endTime.text = schedules[indexPath.row].endTime
+        }
         return cell
         
         
@@ -56,7 +62,7 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+        if (editingStyle == UITableViewCellEditingStyle.delete && numOfRow > 1)  {
             
            numOfRow -= 1
             self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.right)
@@ -93,7 +99,7 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
             
             
             let destinationController = segue.destination as! CreateClubTVC
-            destinationController.clubScheduleArray = clubScheduleArray
+            destinationController.schedules = clubScheduleArray
             destinationController.scheduleLabel.text = "設定済み"
             destinationController.scheduleLabel.textColor = UIColor.black
         }
@@ -106,7 +112,7 @@ class RegularScheduleVC: UIViewController, UITableViewDelegate,UITableViewDataSo
         for i in 0...numOfRow-1 {
             let indexPath = IndexPath(row: i, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! RegularScheduleCell
-            if cell.dayInWeek.text == nil || cell.dayInWeek.text!.isEmpty || cell.endTime.text == nil || cell.endTime.text!.isEmpty || cell.endTime.text == nil || cell.endTime.text!.isEmpty   {
+            if cell.dayInWeek.text == nil || cell.dayInWeek.text!.isEmpty || cell.startTime.text == nil || cell.startTime.text!.isEmpty || cell.endTime.text == nil || cell.endTime.text!.isEmpty   {
                 pass = false
                 break
             }

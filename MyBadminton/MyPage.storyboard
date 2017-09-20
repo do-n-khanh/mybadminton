@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--マイページ-->
+        <!--DiscoveryTVC-->
         <scene sceneID="oS7-1u-zxr">
             <objects>
-                <tableViewController storyboardIdentifier="MyPageId" id="hjd-0m-WNU" customClass="CityNameTVC" customModule="MyBadminton" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hjd-0m-WNU" customClass="DiscoveryTVC" customModule="MyBadminton" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XRE-aH-mjO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityNameIdentifier" id="TSo-8h-TYv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="discoveryCellIdentifier" id="TSo-8h-TYv">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TSo-8h-TYv" id="EHm-IK-bBf">
@@ -32,12 +32,30 @@
                             <outlet property="delegate" destination="hjd-0m-WNU" id="Afa-gC-vt2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="マイページ" id="fz4-Td-y46"/>
+                    <navigationItem key="navigationItem" id="z92-Kc-cx2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qo-k7-79h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442" y="1521"/>
+            <point key="canvasLocation" x="5319.1999999999998" y="1520.6896551724139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lIe-rT-b1b">
+            <objects>
+                <navigationController storyboardIdentifier="MyPageId" automaticallyAdjustsScrollViewInsets="NO" id="rhx-ft-2Jw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qc0-0K-0Xt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hjd-0m-WNU" kind="relationship" relationship="rootViewController" id="aIm-YP-WQS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8a-7y-R7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4380" y="1520.6896551724139"/>
         </scene>
     </scenes>
 </document>
